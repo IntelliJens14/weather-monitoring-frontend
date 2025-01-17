@@ -1,0 +1,69 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #6dd5ed, #2193b0);
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  text-align: center;
+}
+
+.weather-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.weather-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.weather-card canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .weather-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .weather-card p {
+    font-size: 1rem;
+  }
+}

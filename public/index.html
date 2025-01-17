@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Monitoring</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    h1 { color: #333; }
+    #data { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Weather Monitoring Device</h1>
+  <div id="data">
+    <p>Temperature: <span id="temp">Loading...</span> °C</p>
+    <p>Humidity: <span id="humidity">Loading...</span> %</p>
+    <p>Rain: <span id="rain">Loading...</span></p>
+    <p>Wind Speed: <span id="windSpeed">Loading...</span> m/s</p>
+    <p>Pressure: <span id="pressure">Loading...</span> hPa</p>
+  </div>
+
+  <script>
+    async function fetchData() {
+      const response = await fetch("/data");
+      const data = await response.json();
+
+      document.getElementById("temp").textContent = data.temperature || "N/A";
+      document.getElementById("humidity").textContent = data.humidity || "N/A";
+      document.getElementById("rain").textContent = data.rain || "N/A";
+      document.getElementById("windSpeed").textContent = data.windSpeed || "N/A";
+      document.getElementById("pressure").textContent = data.pressure || "N/A";
+    }
+
+    setInterval(fetchData, 1000);
+  </script>
+</body>
+</html>
